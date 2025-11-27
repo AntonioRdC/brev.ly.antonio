@@ -2,6 +2,7 @@ import { env } from '@/env'
 import { createLinkRoute } from '@/infra/http/routes/create-link'
 import { deleteLinkRoute } from '@/infra/http/routes/delete-link'
 import { exportLinksRoute } from '@/infra/http/routes/export-links'
+import { getLinkByShortCodeRoute } from '@/infra/http/routes/get-link-by-short-code'
 import { getLinksRoute } from '@/infra/http/routes/get-links'
 import { redirectRoute } from '@/infra/http/routes/redirect'
 import { transformSwaggerSchema } from '@/infra/http/transform-swagger-schema'
@@ -51,6 +52,7 @@ server.register(createLinkRoute)
 server.register(redirectRoute)
 server.register(deleteLinkRoute)
 server.register(getLinksRoute)
+server.register(getLinkByShortCodeRoute)
 server.register(exportLinksRoute)
 
 server.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
